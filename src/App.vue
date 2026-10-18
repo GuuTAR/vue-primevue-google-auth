@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import Button from 'primevue/button'
+
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -18,6 +20,7 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <RouterView />
+  <Button>Verify</Button>
 </template>
 
 <style scoped>
