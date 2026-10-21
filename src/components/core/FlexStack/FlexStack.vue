@@ -1,11 +1,11 @@
 <template>
-  <div :class="['stack']">
+  <div :class="['stack-root']">
     <slot />
   </div>
 </template>
 
 <style scoped>
-.stack {
+.stack-root {
   display: flex;
 }
 </style>

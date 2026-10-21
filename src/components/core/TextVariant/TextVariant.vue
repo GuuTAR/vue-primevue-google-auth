@@ -26,14 +26,14 @@ const tag = computed(() => VARIANT_TAG[variant])
 <template>
   <component
     :is="tag"
-    :class="['typography', `typography--${variant}`, { 'typography--bold': bold }]"
+    :class="['typography-root', `typography--${variant}`, { 'typography--bold': bold }]"
   >
     <slot />
   </component>
 </template>
 
 <style scoped>
-.typography {
+.typography-root {
   margin: 0;
   color: inherit;
 }

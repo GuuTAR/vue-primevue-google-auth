@@ -5,8 +5,8 @@ import AppIcon from '@primeicons/vue/check-circle'
 
 import { useAppDataStore } from '@/stores/appData'
 
-import Stack from '@/components/core/Stack/Stack.vue'
-import Typography from '@/components/core/Typography/Typography.vue'
+import FlexStack from '@/components/core/FlexStack/FlexStack.vue'
+import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
 
 import * as Languages from './lang'
 
@@ -18,17 +18,17 @@ const { language } = storeToRefs(useAppDataStore())
 </script>
 
 <template>
-  <Stack class="app-name">
-    <Stack class="app-name__icon"><AppIcon :size="20" /></Stack>
-    <Stack class="app-name__content">
-      <Typography variant="h6" :bold="true" class="app-name__title">{{
+  <FlexStack class="app-name">
+    <FlexStack class="app-name__icon"><AppIcon :size="20" /></FlexStack>
+    <FlexStack class="app-name__content">
+      <TextVariant variant="h6" :bold="true" class="app-name__title">{{
         Languages.APP_NAME[language]
-      }}</Typography>
-      <Typography v-if="isDescriptionVisible" variant="body2" class="app-name__description">
+      }}</TextVariant>
+      <TextVariant v-if="isDescriptionVisible" variant="body2" class="app-name__description">
         {{ Languages.APP_DESCRIPTION[language] }}
-      </Typography>
-    </Stack>
-  </Stack>
+      </TextVariant>
+    </FlexStack>
+  </FlexStack>
 </template>
 
 <style scoped>

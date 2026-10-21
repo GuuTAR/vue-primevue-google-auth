@@ -10,8 +10,8 @@ import { useBreakpoint } from '@/composables/useBreakpoint'
 import { useLoginPage } from '@/composables/useLoginPage'
 
 import AppName from '@/components/core/AppName/AppName.vue'
-import Stack from '@/components/core/Stack/Stack.vue'
-import Typography from '@/components/core/Typography/Typography.vue'
+import FlexStack from '@/components/core/FlexStack/FlexStack.vue'
+import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
 
 import * as Languages from './lang'
 
@@ -21,26 +21,26 @@ const { loginGoogle, loginDemo } = useLoginPage()
 
 <template>
   <main class="login-page">
-    <Stack v-if="isDesktop" class="login-page__hero">
-      <Typography variant="body1" class="login-page__overline">{{
+    <FlexStack v-if="isDesktop" class="login-page__hero">
+      <TextVariant variant="body1" class="login-page__overline">{{
         Languages.SHORT_SUMMARY[DEFAULT_LANGUAGE]
-      }}</Typography>
-      <Typography variant="h1" class="login-page__title">
+      }}</TextVariant>
+      <TextVariant variant="h1" class="login-page__title">
         {{ Languages.WELCOME_MESSAGE[DEFAULT_LANGUAGE] }}
-      </Typography>
-      <Typography variant="body1" class="login-page__body">{{
+      </TextVariant>
+      <TextVariant variant="body1" class="login-page__body">{{
         Languages.DESCRIPTION[DEFAULT_LANGUAGE]
-      }}</Typography>
-    </Stack>
+      }}</TextVariant>
+    </FlexStack>
 
-    <Stack class="login-page__panel">
-      <Stack class="login-page__form">
-        <Stack class="login-page__heading">
+    <FlexStack class="login-page__panel">
+      <FlexStack class="login-page__form">
+        <FlexStack class="login-page__heading">
           <AppName :is-description-visible="false" />
-          <Typography variant="h4" :bold="true" class="login-page__sign-in">
+          <TextVariant variant="h4" :bold="true" class="login-page__sign-in">
             {{ Languages.SIGN_IN[DEFAULT_LANGUAGE] }}
-          </Typography>
-        </Stack>
+          </TextVariant>
+        </FlexStack>
 
         <Button variant="outlined" fluid @click="loginGoogle" class="login-page__google">
           <img :src="googleIcon" width="24" height="24" alt="" />
@@ -57,8 +57,8 @@ const { loginGoogle, loginDemo } = useLoginPage()
           fluid
           @click="loginDemo"
         />
-      </Stack>
-    </Stack>
+      </FlexStack>
+    </FlexStack>
   </main>
 </template>
 
