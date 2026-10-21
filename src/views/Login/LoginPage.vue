@@ -16,7 +16,7 @@ import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
 import * as Languages from './lang'
 
 const { isDesktop } = useBreakpoint()
-const { loginGoogle, loginDemo } = useAuth()
+const { isLoading, loginGoogle, loginDemo } = useAuth()
 </script>
 
 <template>
@@ -42,7 +42,13 @@ const { loginGoogle, loginDemo } = useAuth()
           </TextVariant>
         </FlexStack>
 
-        <Button variant="outlined" fluid @click="loginGoogle" class="login-page__google">
+        <Button
+          :disabled="isLoading"
+          variant="outlined"
+          fluid
+          @click="loginGoogle"
+          class="login-page__google"
+        >
           <img :src="googleIcon" width="24" height="24" alt="" />
           <span>{{ Languages.CONTINUE_WITH_GOOGLE[DEFAULT_LANGUAGE] }}</span>
         </Button>
@@ -53,6 +59,7 @@ const { loginGoogle, loginDemo } = useAuth()
 
         <Button
           :label="Languages.PLAY_AS_DEMO_USER[DEFAULT_LANGUAGE]"
+          :disabled="isLoading"
           icon="pi pi-play"
           fluid
           @click="loginDemo"
