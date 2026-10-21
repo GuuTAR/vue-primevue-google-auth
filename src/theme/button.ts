@@ -1,6 +1,9 @@
 import type { ButtonDesignTokens } from '@primeuix/themes/types/button'
 
 export const buttonTheme: ButtonDesignTokens = {
+  root: {
+    borderRadius: '12px',
+  },
   colorScheme: {
     light: {
       root: {
@@ -11,13 +14,17 @@ export const buttonTheme: ButtonDesignTokens = {
           borderColor: '{primary.500}',
           hoverBorderColor: '{primary.600}',
           activeBorderColor: '{primary.700}',
-          color: '#FFFFFF',
-          hoverColor: '#FFFFFF',
-          activeColor: '#FFFFFF',
-          focusRing: {
-            color: '{primary.500}',
-            shadow: '0 0 0 0.2rem rgba(45, 127, 249, 0.2)',
-          },
+          color: '{primary.0}',
+          hoverColor: '{primary.0}',
+          activeColor: '{primary.0}',
+        },
+      },
+      outlined: {
+        primary: {
+          hoverBackground: '{primary.100}',
+          activeBackground: '{primary.200}',
+          color: '{primary.900}',
+          borderColor: '{primary.500}',
         },
       },
     },

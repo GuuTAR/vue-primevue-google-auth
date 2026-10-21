@@ -1,0 +1,20 @@
+:root {
+  --app-spacing-unit: 4px;
+  --app-spacing-0: 0;
+  --app-spacing-1: var(--app-spacing-unit);
+  --app-spacing-2: calc(var(--app-spacing-unit) * 2);
+  --app-spacing-3: calc(var(--app-spacing-unit) * 3);
+  --app-spacing-4: calc(var(--app-spacing-unit) * 4);
+  --app-spacing-5: calc(var(--app-spacing-unit) * 5);
+  --app-spacing-6: calc(var(--app-spacing-unit) * 6);
+  --app-spacing-7: calc(var(--app-spacing-unit) * 7);
+  --app-spacing-8: calc(var(--app-spacing-unit) * 8);
+  --app-spacing-9: calc(var(--app-spacing-unit) * 9);
+  --app-spacing-10: calc(var(--app-spacing-unit) * 10);
+  --app-spacing-11: calc(var(--app-spacing-unit) * 11);
+  --app-spacing-12: calc(var(--app-spacing-unit) * 12);
+  --app-spacing-13: calc(var(--app-spacing-unit) * 13);
+  --app-spacing-14: calc(var(--app-spacing-unit) * 14);
+  --app-spacing-15: calc(var(--app-spacing-unit) * 15);
+  --app-spacing-16: calc(var(--app-spacing-unit) * 16);
+}
