@@ -2435,6 +2435,11 @@ prettier@3.9.6:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.9.6.tgz#b3ea5146515d40fc53f18aa63f74dfab1e10dbf6"
   integrity sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==
 
+primeicons@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-8.0.2.tgz#2bdcc8a9679791e7dd20b65c2c32121cd1aa5b38"
+  integrity sha512-o3UQey3nXMEQRAudVYZZWswz6mmnWpPnksYb7wIu4rEEVfdS3pLnxnmSJx5gKBRMer1MxnhJZG5QRDxVVJFNkA==
+
 primevue@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/primevue/-/primevue-5.0.2.tgz#5697c57a2c9fef40364e560b5183ea5336dbee1a"
