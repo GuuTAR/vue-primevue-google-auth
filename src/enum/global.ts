@@ -21,3 +21,9 @@ export enum ALERT_COLOR {
   INFO = 'info',
   SUCCESS = 'success',
 }
+
+export enum TODO_FILTER {
+  ALL = 'all',
+  ACTIVE = 'active',
+  COMPLETED = 'completed',
+}

@@ -2,9 +2,12 @@ import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 
 import { buttonTheme } from '@/theme/button'
+import { checkboxTheme } from '@/theme/checkbox'
 import { dividerTheme } from '@/theme/divider'
+import { inputTextTheme } from '@/theme/inputtext'
 import { sidebarTheme } from '@/theme/sidebar'
 import { toastTheme } from '@/theme/toast'
+import { toggleButtonTheme } from '@/theme/togglebutton'
 
 const preset = definePreset(Aura, {
   semantic: {
@@ -45,6 +48,9 @@ const preset = definePreset(Aura, {
     divider: dividerTheme,
     sidebar: sidebarTheme,
     toast: toastTheme,
+    inputtext: inputTextTheme,
+    togglebutton: toggleButtonTheme,
+    checkbox: checkboxTheme,
   },
   extend: {
     colorScheme: {
