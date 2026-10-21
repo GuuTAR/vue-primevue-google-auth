@@ -29,6 +29,7 @@ import {
 
 import { useAppDataStore } from '@/stores/appData'
 import { useAuthStore } from '@/stores/auth'
+import { useTodoStore } from '@/stores/todo'
 
 // Closing or replacing the Google popup is a user choice, not a failure worth a toast
 const DISMISSED_POPUP_CODES = ['auth/popup-closed-by-user', 'auth/cancelled-popup-request']
@@ -39,6 +40,7 @@ export function useAuth() {
 
   const appData = useAppDataStore()
   const authStore = useAuthStore()
+  const todoStore = useTodoStore()
 
   const isLoading = ref(false)
 
@@ -93,6 +95,7 @@ export function useAuth() {
     try {
       await signOut(auth)
       authStore.setUser(null)
+      todoStore.resetTodos()
       await router.push({ name: 'login' })
       showToast('success', LOGOUT_SUCCESS_MESSAGE, 3000)
     } catch {

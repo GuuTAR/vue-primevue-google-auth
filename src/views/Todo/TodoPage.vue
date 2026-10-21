@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+
 import { storeToRefs } from 'pinia'
 
 import { useAppDataStore } from '@/stores/appData'
+import { useTodoStore } from '@/stores/todo'
 
 import FlexStack from '@/components/core/FlexStack/FlexStack.vue'
 import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
@@ -13,6 +16,11 @@ import TodoListSection from '@/views/Todo/section/TodoList/TodoListSection.vue'
 import * as Languages from './lang'
 
 const { language } = storeToRefs(useAppDataStore())
+const { fetchTodos } = useTodoStore()
+
+onMounted(() => {
+  fetchTodos()
+})
 </script>
 
 <template>

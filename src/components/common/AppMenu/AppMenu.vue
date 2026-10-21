@@ -95,6 +95,7 @@ const { isDesktop } = useBreakpoint()
 
 <style scoped>
 .app-menu__layout {
+  width: 100%;
   min-height: 100vh;
 }
 
