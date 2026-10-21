@@ -3,6 +3,7 @@ import type { ButtonDesignTokens } from '@primeuix/themes/types/button'
 export const buttonTheme: ButtonDesignTokens = {
   root: {
     borderRadius: '12px',
+    gap: 'var(--app-spacing-4)',
   },
   colorScheme: {
     light: {
@@ -25,6 +26,12 @@ export const buttonTheme: ButtonDesignTokens = {
           activeBackground: '{primary.200}',
           color: '{primary.900}',
           borderColor: '{primary.500}',
+        },
+      },
+
+      text: {
+        primary: {
+          color: '{text.color}',
         },
       },
     },

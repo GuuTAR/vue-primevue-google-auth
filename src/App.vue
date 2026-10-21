@@ -4,15 +4,17 @@ import { RouterView, useRoute } from 'vue-router'
 
 import Toast from 'primevue/toast'
 
+import AppMenu from '@/components/common/AppMenu/AppMenu.vue'
+
 const route = useRoute()
 const isShowMenu = computed(() => route.meta.showMenu)
 </script>
 
 <template>
-  <Toast position="top-center" />
+  <Toast position="top-right" />
 
   <RouterView v-if="!isShowMenu" class="layout-without-menu" />
-  <div v-else class="layout-with-menu">
+  <AppMenu v-else>
     <RouterView />
-  </div>
+  </AppMenu>
 </template>

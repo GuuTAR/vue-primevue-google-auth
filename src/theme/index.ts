@@ -3,12 +3,14 @@ import Aura from '@primeuix/themes/aura'
 
 import { buttonTheme } from '@/theme/button'
 import { dividerTheme } from '@/theme/divider'
+import { sidebarTheme } from '@/theme/sidebar'
+import { toastTheme } from '@/theme/toast'
 
 const preset = definePreset(Aura, {
   semantic: {
     primary: {
       0: '#FFFFFF',
-      50: '#EFF6FF',
+      50: '#F2F6FD',
       100: '#DBEAFE',
       200: '#BFDBFE',
       300: '#93C5FD',
@@ -41,12 +43,14 @@ const preset = definePreset(Aura, {
   components: {
     button: buttonTheme,
     divider: dividerTheme,
+    sidebar: sidebarTheme,
+    toast: toastTheme,
   },
   extend: {
     colorScheme: {
       light: {
         background: {
-          color: '{primary.0}',
+          color: '{primary.50}',
         },
       },
     },

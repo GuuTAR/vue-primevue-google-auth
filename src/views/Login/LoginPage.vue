@@ -6,8 +6,8 @@ import googleIcon from '@/assets/google.svg'
 
 import { DEFAULT_LANGUAGE } from '@/data/user'
 
+import { useAuth } from '@/composables/useAuth'
 import { useBreakpoint } from '@/composables/useBreakpoint'
-import { useLoginPage } from '@/composables/useLoginPage'
 
 import AppName from '@/components/core/AppName/AppName.vue'
 import FlexStack from '@/components/core/FlexStack/FlexStack.vue'
@@ -16,7 +16,7 @@ import TextVariant from '@/components/core/TextVariant/TextVariant.vue'
 import * as Languages from './lang'
 
 const { isDesktop } = useBreakpoint()
-const { loginGoogle, loginDemo } = useLoginPage()
+const { loginGoogle, loginDemo } = useAuth()
 </script>
 
 <template>
@@ -92,6 +92,7 @@ const { loginGoogle, loginDemo } = useLoginPage()
 .login-page__panel {
   align-items: center;
   justify-content: center;
+  background: var(--p-primary-0);
 }
 
 .login-page__form {
