@@ -1,4 +1,5 @@
 import { useRouter } from 'vue-router'
+
 import { useToast } from 'primevue'
 
 import { AUTH_UNAVAILABLE_MESSAGE, LOGIN_SUCCESS_MESSAGE } from '@/lang/auth'
