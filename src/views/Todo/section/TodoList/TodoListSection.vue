@@ -20,7 +20,7 @@ import * as Languages from './lang'
 
 const { language } = storeToRefs(useAppDataStore())
 const todoStore = useTodoStore()
-const { filter, visibleTodos } = storeToRefs(todoStore)
+const { filter, isLoading, visibleTodos } = storeToRefs(todoStore)
 const { toggleTodo, removeTodo } = todoStore
 
 const dateFormatter = computed(
@@ -34,8 +34,8 @@ const dateFormatter = computed(
     }),
 )
 
-function formatDate(timestamp: number): string {
-  return dateFormatter.value.format(timestamp)
+function formatDate(date: string): string {
+  return dateFormatter.value.format(new Date(date))
 }
 
 const DATE_LOCALE: Record<LANGUAGE, string> = {
@@ -49,7 +49,7 @@ const DATE_LOCALE: Record<LANGUAGE, string> = {
     <ul v-if="visibleTodos.length > 0" class="todo-page__list">
       <li v-for="todo in visibleTodos" :key="todo.id" class="todo-page__list-item">
         <Checkbox
-          :model-value="todo.done"
+          :model-value="todo.isCompleted"
           :input-id="`todo-${todo.id}`"
           :binary="true"
           @update:model-value="toggleTodo(todo.id)"
@@ -58,9 +58,12 @@ const DATE_LOCALE: Record<LANGUAGE, string> = {
         <label :for="`todo-${todo.id}`" class="todo-page__list-item-content">
           <TextVariant
             variant="body1"
-            :class="['todo-page__list-item-text', { 'todo-page__list-item-text--done': todo.done }]"
+            :class="[
+              'todo-page__list-item-text',
+              { 'todo-page__list-item-text--done': todo.isCompleted },
+            ]"
           >
-            {{ todo.text }}
+            {{ todo.title }}
           </TextVariant>
           <TextVariant variant="caption" class="todo-page__list-item-date">
             {{ formatDate(todo.createdAt) }}
@@ -77,6 +80,12 @@ const DATE_LOCALE: Record<LANGUAGE, string> = {
         />
       </li>
     </ul>
+
+    <FlexStack v-else-if="isLoading" class="todo-page__list-empty">
+      <TextVariant variant="body2" class="todo-page__list-empty-description">
+        {{ Languages.LOADING[language] }}
+      </TextVariant>
+    </FlexStack>
 
     <FlexStack v-else class="todo-page__list-empty">
       <TextVariant variant="body2" :bold="true" class="todo-page__list-empty-title">

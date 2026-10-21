@@ -34,3 +34,8 @@ export const DELETE_TASK: Record<LANGUAGE, string> = {
   [LANGUAGE.ENGLISH]: 'Delete task',
   [LANGUAGE.THAI]: 'ลบงาน',
 }
+
+export const LOADING: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Loading tasks...',
+  [LANGUAGE.THAI]: 'กำลังโหลดงาน...',
+}

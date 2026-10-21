@@ -17,13 +17,16 @@ const { language } = storeToRefs(useAppDataStore())
 const { addTodo } = useTodoStore()
 
 const draft = ref('')
+const isSubmitting = ref(false)
 
-const isDraftEmpty = computed(() => !draft.value.trim())
+const isAddDisabled = computed(() => !draft.value.trim() || isSubmitting.value)
 
-function handleAddTodo(): void {
-  if (isDraftEmpty.value) return
-  addTodo(draft.value.trim())
-  draft.value = ''
+async function handleAddTodo(): Promise<void> {
+  if (isAddDisabled.value) return
+  isSubmitting.value = true
+  const isCreated = await addTodo(draft.value.trim())
+  if (isCreated) draft.value = ''
+  isSubmitting.value = false
 }
 </script>
 
@@ -40,7 +43,8 @@ function handleAddTodo(): void {
     />
     <Button
       :label="Languages.ADD[language]"
-      :disabled="isDraftEmpty"
+      :disabled="isAddDisabled"
+      :loading="isSubmitting"
       icon="pi pi-plus"
       size="large"
       @click="handleAddTodo"

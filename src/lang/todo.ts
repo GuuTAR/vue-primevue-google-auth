@@ -14,3 +14,18 @@ export const TODO_CLEARED_MESSAGE: Record<LANGUAGE, string> = {
   [LANGUAGE.ENGLISH]: 'Completed todos cleared!',
   [LANGUAGE.THAI]: 'ล้างงานที่เสร็จแล้ว!',
 }
+
+export const TODO_CREATE_FAILURE_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Failed to create todo!',
+  [LANGUAGE.THAI]: 'สร้างงานไม่สำเร็จ!',
+}
+
+export const TODO_UPDATE_FAILURE_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Failed to update todo!',
+  [LANGUAGE.THAI]: 'อัปเดตงานไม่สำเร็จ!',
+}
+
+export const TODO_DELETE_FAILURE_MESSAGE: Record<LANGUAGE, string> = {
+  [LANGUAGE.ENGLISH]: 'Failed to delete todo!',
+  [LANGUAGE.THAI]: 'ลบงานไม่สำเร็จ!',
+}
