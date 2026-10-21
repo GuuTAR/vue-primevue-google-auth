@@ -1,5 +1,5 @@
-import 'primeicons/primeicons.css'
 import '@/assets/main.css'
+import 'primeicons/primeicons.css'
 
 import { createApp } from 'vue'
 
@@ -10,11 +10,11 @@ import ToastService from 'primevue/toastservice'
 
 import { CONFIG } from '@/config'
 
-import App from '@/App.vue'
-
 import router from '@/router'
 
 import { primeVueTheme } from '@/theme'
+
+import App from '@/App.vue'
 
 const app = createApp(App)
 

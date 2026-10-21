@@ -1,8 +1,8 @@
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 
-import { buttonTheme } from './button'
-import { dividerTheme } from './divider'
+import { buttonTheme } from '@/theme/button'
+import { dividerTheme } from '@/theme/divider'
 
 const preset = definePreset(Aura, {
   semantic: {

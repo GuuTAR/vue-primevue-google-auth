@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppIcon from '@primeicons/vue/check-circle'
-
 import { storeToRefs } from 'pinia'
+
+import AppIcon from '@primeicons/vue/check-circle'
 
 import { useAppDataStore } from '@/stores/appData'
 
